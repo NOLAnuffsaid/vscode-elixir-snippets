@@ -283,18 +283,18 @@
 		"scope": "source.elixir"
 	},
   "tas": {
-    "prefix": ["task", "async"],
+    "prefix": ["async"],
     "body": "Task.async(fn -> $0 end)",
     "description": "spawn an async task that can be awaited on",
     "scope": "source.elixir"
   },
   "taw": {
-    "prefix": ["task", "await"],
+    "prefix": ["await"],
     "body": "Task.await($)",
     "scope": "source.elixir"
   },
   "tasaw": {
-    "prefix": ["task", "async", "await"],
+    "prefix": ["task"],
     "body": [
       "Task.async(fn -> $0 end)",
       "Task.await($1)"
