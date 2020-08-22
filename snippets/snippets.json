@@ -1,59 +1,59 @@
 {
-	"case": {
+	"Case Statement": {
 		"prefix": "case",
 		"body": "case $1 do\n  $2 ->\n    $0\nend",
 		"description": "case",
 		"scope": "source.elixir"
 	},
-	"cond": {
+	"Cond..Do": {
 		"prefix": "cond",
 		"body": "cond do\n  $1 ->\n    $0\nend",
 		"description": "cond",
 		"scope": "source.elixir"
 	},
-	"def": {
+	"Def": {
 		"prefix": "def",
 		"body": "def $1 do\n\t$0\nend",
 		"description": "def",
 		"scope": "source.elixir"
 	},
-	"df": {
+	"Inline Def": {
 		"prefix": "df",
 		"body": "def $1, do: $0",
 		"description": "def (one line)",
 		"scope": "source.elixir"
 	},
-	"defc": {
+	"Callback Function": {
 		"prefix": "defc",
 		"body": "defcallback $1 :: $0",
 		"description": "defcallback",
 		"scope": "source.elixir"
 	},
-	"defd": {
+	"Delegate Function": {
 		"prefix": "defd",
 		"body": "defdelegate $1 to: $0",
 		"description": "defdelegate",
 		"scope": "source.elixir"
 	},
-	"defe": {
+	"Define Exception": {
 		"prefix": "defe",
 		"body": "defexception [${1::message}]",
 		"description": "defexception",
 		"scope": "source.elixir"
 	},
-	"defi": {
+	"Define an Implementation": {
 		"prefix": "defi",
 		"body": "defimpl $1, for: $2 do\n  $0\nend",
 		"description": "defimpl",
 		"scope": "source.elixir"
 	},
-	"dmac": {
+	"Define a Macro": {
 		"prefix": ["dmac", "defmac"],
 		"body": "defmacro $1 do\n\t$0\nend",
 		"description": "defmacro",
 		"scope": "source.elixir"
 	},
-	"defmc": {
+	"Define a Macro Callback": {
 		"prefix": "defmc",
 		"body": "defmacrocallback $1 :: $0",
 		"description": "defmacrocallback",
@@ -65,55 +65,55 @@
 		"description": "defmacrop",
 		"scope": "source.elixir"
 	},
-	"describe": {
+	"Describe Test Grouping": {
 		"prefix": "describe",
 		"body": "describe $1 do\n\t$0\nend",
 		"description": "describe",
 		"scope": "source.elixir"
 	},
-	"dmod": {
+	"Define a Module": {
 		"prefix": ["dmod", "defmod"],
 		"body": "defmodule ${1:${TM_FILENAME_BASE/(.+)/${1:/pascalcase}/}} do\n\t$0\nend",
 		"description": "def module",
 		"scope": "source.elixir"
 	},
-	"defp": {
+	"Define a Private Function": {
 		"prefix": "defp",
 		"body": "defp $1 do\n\t$0\nend",
 		"description": "defp",
 		"scope": "source.elixir"
 	},
-	"defpro": {
+	"Define a Protocol": {
 		"prefix": "defpro",
 		"body": "defprotocol $1 do\n  $0\nend",
 		"description": "defprotocol",
 		"scope": "source.elixir"
 	},
-	"defs": {
+	"Define a Struct": {
 		"prefix": "defs",
 		"body": "defstruct $1: $2",
 		"description": "defstruct",
 		"scope": "source.elixir"
 	},
-	"do": {
+	"Do...End Block": {
 		"prefix": "do",
 		"body": "do\n\t$0\nend",
 		"description": "do",
 		"scope": "source.elixir"
 	},
-	"doc": {
+	"Documentation": {
 		"prefix": "doc",
 		"body": "@doc \"\"\"\n$0\n\"\"\"",
 		"description": "doc",
 		"scope": "source.elixir"
 	},
-	"ee": {
+	"Embedded Elixir String": {
 		"prefix": "ee",
 		"body": "<% $0 %>",
 		"description": "embed_eex",
 		"scope": "text.elixir,text.html.elixir"
 	},
-	"eefor": {
+	"Embedded Comprehension": {
 		"prefix": ["ee", "for"],
 		"body": [
       "<% for ${1:item} <- ${0:items} do %>",
@@ -123,79 +123,91 @@
 		"description": "embed_eex for comp",
 		"scope": "text.elixir,text.html.elixir"
 	},
-	"fn": {
+	"Anonymous Function": {
 		"prefix": "fn",
 		"body": "fn -> $0 end",
 		"description": "fn zero arity",
 		"scope": "source.elixir"
 	},
-	"fn1": {
-		"prefix": "fn",
+	"Anonymous Function with One Param": {
+		"prefix": "fn1",
 		"body": "fn $0 -> $1 end",
 		"description": "fn one arity",
 		"scope": "source.elixir"
 	},
-	"fn2": {
-		"prefix": "fn",
+	"Anonymous Function with Two Param": {
+		"prefix": "fn2",
 		"body": "fn $0, $1 -> $2 end",
 		"description": "fn two arity",
 		"scope": "source.elixir"
 	},
-	"fn3": {
-		"prefix": "fn",
+	"Anonymous Function with Three Param": {
+    "prefix": "fn3",
 		"body": "fn $0, $1, $2 -> $3 end",
 		"description": "fn three arity",
 		"scope": "source.elixir"
 	},
-	"for": {
+	"For Comprehension": {
 		"prefix": "for",
 		"body": "for ${1:item} <- ${2:items} do\n  $0\nend",
 		"description": "for",
 		"scope": "source.elixir"
 	},
-	"fori": {
+	"For Comp Into": {
 		"prefix": "fori",
 		"body": "for ${1:item} <- ${2:items}, into: ${3:[]} do;\n  $0\nend",
 		"description": "for into",
 		"scope": "source.elixir"
 	},
-	"if": {
+  "Handle Call": {
+    "prefix": "hcall",
+    "body": "def handle_call(${0:Message}, ${1:_from}, ${2:state}) do\nend",
+    "description": "OTP callback to handle syncronous messages",
+    "scope": "source.elixir"
+  },
+  "Handle Cast": {
+    "prefix": "hcast",
+    "body": "def handle_cast(${0:Message}, ${1:_from}, ${2:state}) do\nend",
+    "description": "OTP callback to handle async messages",
+    "scope": "source.elixir"
+  },
+  "Handle Info": {
+    "prefix": "hinfo",
+    "body": "def handle_info(${0:Message}, ${2:state}) do\nend",
+    "description": "OTP callback to handle async messages",
+    "scope": "source.elixir"
+  },
+	"If Do...End": {
 		"prefix": "if",
 		"body": "if $1 do\n  $0\nend",
 		"description": "if",
 		"scope": "source.elixir"
 	},
-	"ife": {
+	"If...Else...Do...End": {
 		"prefix": "ife",
 		"body": "if $1 do\n  $2\nelse\n  $0\nend",
 		"description": "if else",
 		"scope": "source.elixir"
 	},
-	"ife:": {
+	"If...Else Function:": {
 		"prefix": "ife:",
 		"body": "if $1, do: $2, else: $0",
 		"description": "if else (one line)",
 		"scope": "source.elixir"
 	},
-	"if:": {
+	"If Function:": {
 		"prefix": "if:",
 		"body": "if $1, do: $0",
 		"description": "if (one line)",
 		"scope": "source.elixir"
 	},
-	"imp": {
+	"Import": {
 		"prefix": "imp",
 		"body": "import $0",
 		"description": "import",
 		"scope": "source.elixir"
 	},
-	"i": {
-		"prefix": "i",
-		"body": "inspect($0)",
-		"description": "inspect",
-		"scope": "source.elixir"
-	},
-	"ii": {
+	"IO Inspect": {
 		"prefix": "ii",
 		"body": "IO.inspect($0)",
 		"description": "IO.inspect",
@@ -223,30 +235,36 @@
 		"body": "|> IO.inspect(label: \"#{__MODULE__}:#{__ENV__.line} #{DateTime.utc_now}\", limit: :infinity)",
 		"description": "IO.inspect() piped value with module name & line number"
 	},
-	"ip": {
+	"IO Puts": {
 		"prefix": "iip",
 		"body": "IO.puts(\"$0\")",
 		"description": "IO.puts(..)",
 		"scope": "source.elixir"
 	},
-	"::": {
+	"Map Key,Value Pair": {
 		"prefix": "::",
 		"body": "${1:key} => ${2:value}$0",
 		"description": "key => value",
 		"scope": "source.elixir"
 	},
-	"%": {
+	"Struct": {
 		"prefix": "%",
 		"body": "%${1:Struct}{$2}$0",
 		"description": "map/struct",
 		"scope": "source.elixir"
 	},
-	"mdoc": {
+	"Module Doc": {
 		"prefix": "mdoc",
 		"body": "@moduledoc \"\"\"\n$0\n\"\"\"",
 		"description": "moduledoc"
 	},
-	"mfs": {
+  "Module, Function, Argument Pattern": {
+    "prefix": "mfa",
+    "body": "${0:Module}, ${1:FunctionAtom}, ${2:[Arguments]}",
+    "description": "Standard MFA Elixir syntax",
+    "scope": "source.elixir"
+  },
+	"Map From Struct": {
 		"prefix": "mfs",
 		"body": "Map.from_struct($0)",
 		"description": "Map from Struct",
@@ -258,42 +276,42 @@
 		"description": "sanitize a map by dropping some keys",
 		"scope": "source.elixir,"
 	},
-	"p": {
+	"Pipe Op": {
 		"prefix": "p",
 		"body": "|> $0",
 		"description": "your favorite pipeline (|>)",
 		"scope": "text.elixir,"
 	},
-	"pe": {
+	"Print Embedded": {
 		"prefix": "pe",
 		"body": "<%= $0 %>",
 		"description": "print_eex",
 		"scope": "text.elixir,text.html.elixir"
 	},
-	"rec": {
+	"Receive...Do": {
 		"prefix": "rec",
 		"body": "receive do\n\t${1:{${2::${3:message_type}}, ${4:value}\\}} ->\n    ${0:# code}\nend\n",
 		"description": "receive",
 		"scope": "source.elixir"
 	},
-	"req": {
+	"Require": {
 		"prefix": "req",
 		"body": "require $0",
 		"description": "require",
 		"scope": "source.elixir"
 	},
-  "tas": {
+  "Async Task": {
     "prefix": ["async"],
     "body": "Task.async(fn -> $0 end)",
     "description": "spawn an async task that can be awaited on",
     "scope": "source.elixir"
   },
-  "taw": {
+  "Await For Task": {
     "prefix": ["await"],
     "body": "Task.await($)",
     "scope": "source.elixir"
   },
-  "tasaw": {
+  "Async...Await Pattern": {
     "prefix": ["task"],
     "body": [
       "Task.async(fn -> $0 end)",
@@ -302,85 +320,82 @@
     "description": "common Async-Await pattern",
     "scope": "source.elixir"
   },
-	"unless": {
-		"prefix": "unless",
-		"body": "unless $1 do\n  $0\nend",
-		"description": "unless",
-		"scope": "source.elixir"
-	},
-	"oke": {
+	"Ok Tuple Pattern": {
 		"prefix": "ok",
 		"body": "{:ok, $1} = $0",
 		"description": "{:ok, ... } = ...",
 		"scope": "source.elixir"
 	},
-	"erre": {
+	"Error Tuple Pattern": {
 		"prefix": "error",
 		"body": "{:error, $1} = $0",
 		"description": "{:error, ... } = ...",
 		"scope": "source.elixir"
 	},
 	"ok": {
-		"prefix": "ok",
+		"prefix": "?ok?",
 		"body": "{:ok, $1} $0",
 		"description": "{:ok, ... } ...",
 		"scope": "source.elixir"
 	},
 	"err": {
-		"prefix": "error",
+		"prefix": "?error?",
 		"body": "{:error, $1} $0",
 		"description": "{:error, ... } ...",
 		"scope": "source.elixir"
 	},
-	"test": {
+	"Define ExUnit Test": {
 		"prefix": "test",
 		"body": "test $1 do\n\t$0\nend",
 		"description": "test",
 		"scope": "source.elixir"
 	},
-	"trc": {
+	"Try...Do...Catch": {
 		"prefix": "trc",
 		"body": "try do\n  $0\ncatch\n $1 -> $2\nend",
 		"description": "try catch",
 		"scope": "source.elixir"
 	},
-	"trr": {
+	"Try...Do...Rescue": {
 		"prefix": "trr",
 		"body": "try do\n  $0\nrescue\n  _ -> :rescued\nend",
 		"description": "try rescue (everything!)",
 		"scope": "source.elixir"
 	},
-	"unlesse": {
+	"Unless...Do...Else": {
 		"prefix": "unlesse",
 		"body": "unless $1 do\n  $2\nelse\n  $0\nend",
 		"description": "unless else",
 		"scope": "source.elixir"
 	},
-	"unlesse:": {
+	"Unless Else Function": {
 		"prefix": "unlesse:",
 		"body": "unless $1, do: $2, else: $0",
 		"description": "unless else (one line)",
 		"scope": "source.elixir"
 	},
-	"unless:": {
+	"Unless Function": {
 		"prefix": "unless:",
 		"body": "unless $1, do: $0",
 		"description": "unless (one line)",
 		"scope": "source.elixir"
 	},
+	"Unless...Do": {
+		"prefix": "unless",
+		"body": "unless $1 do\n  $0\nend",
+		"description": "unless",
+		"scope": "source.elixir"
+	},
 	"Supervisor": {
-		"prefix": "supervisor",
+		"prefix": "super",
 		"body": [
-			"defmodule ${moduleName} do",
-			"\tuse Supervisor",
-			"",
-			"\tdef start_link(${args}) do",
-			"\t\tSupervisor.start_link(__MODULE__, [${args}], name: __MODULE__)",
-			"\tend",
-			"",
+			"defmodule ${0:moduleName} do",
+			"\tuse Supervisor\n\n",
+			"\tdef start_link(${1:args}) do",
+			"\t\tSupervisor.start_link(__MODULE__, [${args}], name: ${2:Name})",
+			"\tend\n\n",
 			"\tdef init([${args}]) do",
-			"\t\tchildren = []",
-			"",
+			"\t\tchildren = []\n\n",
 			"\t\tSupervisor.init(children, strategy: :one_for_one)",
 			"\tend",
 			"end"
@@ -389,28 +404,14 @@
 		"scope": "source.elixir"
 	},
 	"DynamicSupervisor": {
-		"prefix": "dynamic_supervisor",
+		"prefix": "dynsuper",
 		"body": [
-			"defmodule ${ModuleName} do",
-			"\tuse DynamicSupervisor",
-			"",
-			"\tdef start_link(${init_args}) do",
-			"\t\tDynamicSupervisor.start_link(__MODULE__, [${init_args}], name: __MODULE__)",
-			"\tend",
-			"",
-			"\tdef start_child(${child_args}) do",
-			"\t\tchild_spec = %{",
-			"\t\t\tid: ${ChildModule},",
-			"\t\t\tstart: {${ChildModule}, :start_link, [${child_args}]},",
-			"\t\t\trestart: :transient,",
-			"\t\t\tshutdown: :brutal_kill,",
-			"\t\t\ttype: :worker,",
-			"\t\t\tmodules: [${ChildModule}],",
-			"\t\t}",
-			"",
-			"\t\tDynamicSupervisor.start_child(__MODULE__, child_spec)",
-			"\tend",
-			"",
+			"defmodule ${0:ModuleName} do",
+			"\tuse DynamicSupervisor\n\n",
+			"\tdef start_link(${1:init_args}) do",
+			"\t\tDynamicSupervisor.start_link(__MODULE__, [${init_args}], name: ${2:Name})",
+			"\tend\n\n",
+      "\t@impl true",
 			"\tdef init([${init_args}]) do",
 			"\t\tDynamicSupervisor.init(strategy: :one_for_one)",
 			"\tend",
@@ -420,19 +421,15 @@
 		"scope": "source.elixir"
 	},
 	"GenServer": {
-		"prefix": "gen_server",
+		"prefix": "genserver",
 		"body": [
-			"defmodule ${ModuleName} do",
-			"\tuse GenServer",
-			"",
-			"\tdef start_link(${init_args}) do",
-			"\t\t# you may want to register your server with `name: __MODULE__`",
-			"\t\t# as a third argument to `start_link`",
+			"defmodule ${0:ModuleName} do",
+			"\tuse GenServer\n\n",
+			"\tdef start_link(${1:init_args}) do",
 			"\t\tGenServer.start_link(__MODULE__, [${init_args}])",
-			"\tend",
-			"",
-			"\tdef init(_args) do",
-			"\t\t{:ok, :initial_state}",
+			"\tend\n\n",
+			"\tdef init(${init_args}) do",
+			"\t\t{:ok, ${2:IntialState}}",
 			"\tend",
 			"end"
 		],
@@ -455,7 +452,7 @@
 		"description": "Insert code for a ExUnit",
 		"scope": "source.elixir"
 	},
-	"wt": {
+	"With...Do": {
 		"prefix": "wt",
 		"body": [
 			"with $1 do",
@@ -465,7 +462,7 @@
 		"description": "with",
 		"scope": "source.elixir"
 	},
-	"wte": {
+	"With...Do...Else": {
 		"prefix": "wte",
 		"body": [
 			"with $1 do",
