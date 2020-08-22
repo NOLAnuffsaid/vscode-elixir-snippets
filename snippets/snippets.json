@@ -113,10 +113,38 @@
 		"description": "embed_eex",
 		"scope": "text.elixir,text.html.elixir"
 	},
+	"eefor": {
+		"prefix": ["ee", "for"],
+		"body": [
+      "<% for ${1:item} <- ${0:items} do %>",
+      "\t$2",
+      "<% end %>"
+    ],
+		"description": "embed_eex for comp",
+		"scope": "text.elixir,text.html.elixir"
+	},
 	"fn": {
 		"prefix": "fn",
-		"body": "fn ${1:args} -> $2 end$0",
-		"description": "fn",
+		"body": "fn -> $0 end",
+		"description": "fn zero arity",
+		"scope": "source.elixir"
+	},
+	"fn1": {
+		"prefix": "fn",
+		"body": "fn $0 -> $1 end",
+		"description": "fn one arity",
+		"scope": "source.elixir"
+	},
+	"fn2": {
+		"prefix": "fn",
+		"body": "fn $0, $1 -> $2 end",
+		"description": "fn two arity",
+		"scope": "source.elixir"
+	},
+	"fn3": {
+		"prefix": "fn",
+		"body": "fn $0, $1, $2 -> $3 end",
+		"description": "fn three arity",
 		"scope": "source.elixir"
 	},
 	"for": {
@@ -254,6 +282,26 @@
 		"description": "require",
 		"scope": "source.elixir"
 	},
+  "tas": {
+    "prefix": ["task", "async"],
+    "body": "Task.async(fn -> $0 end)",
+    "description": "spawn an async task that can be awaited on",
+    "scope": "source.elixir"
+  },
+  "taw": {
+    "prefix": ["task", "await"],
+    "body": "Task.await($)",
+    "scope": "source.elixir"
+  },
+  "tasaw": {
+    "prefix": ["task", "async", "await"],
+    "body": [
+      "Task.async(fn -> $0 end)",
+      "Task.await($1)"
+    ],
+    "description": "common Async-Await pattern",
+    "scope": "source.elixir"
+  },
 	"unless": {
 		"prefix": "unless",
 		"body": "unless $1 do\n  $0\nend",
